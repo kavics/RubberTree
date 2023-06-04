@@ -130,7 +130,7 @@ namespace Numbers
             // 
             // calcOneButton
             // 
-            calcOneButton.Location = new Point(83, 2);
+            calcOneButton.Location = new Point(77, 2);
             calcOneButton.Name = "calcOneButton";
             calcOneButton.Size = new Size(75, 25);
             calcOneButton.TabIndex = 5;
@@ -366,6 +366,7 @@ namespace Numbers
             udAdd.BorderStyle = BorderStyle.FixedSingle;
             udAdd.Location = new Point(61, 112);
             udAdd.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
+            udAdd.Minimum = new decimal(new int[] { 99999999, 0, 0, int.MinValue });
             udAdd.Name = "udAdd";
             udAdd.Size = new Size(48, 23);
             udAdd.TabIndex = 27;
@@ -492,16 +493,16 @@ namespace Numbers
             lbFormula.Name = "lbFormula";
             lbFormula.Size = new Size(171, 20);
             lbFormula.TabIndex = 14;
-            lbFormula.Text = "X^1 + 0";
+            lbFormula.Text = "<10> (X^2)%100";
             lbFormula.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btInfo
             // 
-            btInfo.Location = new Point(194, 2);
+            btInfo.Location = new Point(166, 2);
             btInfo.Name = "btInfo";
-            btInfo.Size = new Size(52, 25);
+            btInfo.Size = new Size(80, 25);
             btInfo.TabIndex = 22;
-            btInfo.Text = "Info";
+            btInfo.Text = "Saved info";
             btInfo.UseVisualStyleBackColor = true;
             btInfo.Click += btInfo_Click;
             // 

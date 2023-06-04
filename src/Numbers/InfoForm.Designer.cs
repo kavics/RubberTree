@@ -36,6 +36,7 @@
             textBox1.Location = new Point(8, 8);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
+            textBox1.ScrollBars = ScrollBars.Vertical;
             textBox1.Size = new Size(432, 376);
             textBox1.TabIndex = 0;
             textBox1.Text = "textBox1";
@@ -47,7 +48,7 @@
             ClientSize = new Size(448, 390);
             Controls.Add(textBox1);
             Name = "InfoForm";
-            Text = "InfoForm";
+            Text = "Saved trees information";
             Load += InfoForm_Load;
             ResumeLayout(false);
             PerformLayout();

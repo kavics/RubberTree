@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 
 namespace Numbers
@@ -22,6 +23,8 @@ namespace Numbers
             _hasEvent = true;
             _startingEvent = true;
 
+            Text = "Numbers V" + Assembly.GetExecutingAssembly().GetName().Version;
+
             udNumberSystem.Value = 10;
             udDigits.Value = 2;
             udCircle.Minimum = 0;
@@ -29,6 +32,10 @@ namespace Numbers
             udCircle.Value = 0;
             udAdd.Value = 0;
             udPow.Value = 2;
+            lbRepulsionMax.Text = "0";
+            lbRubberMax.Text = "0";
+            lbForceMax.Text = "0";
+
             UpdateFormula();
             InitGraphics();
 
@@ -63,8 +70,8 @@ namespace Numbers
 
         void UpdateFormula()
         {
-            var add = udAdd.Value > 0 ? $" + {udAdd.Value}" : udAdd.Value < 0 ? $" - {-udAdd.Value}" : string.Empty;
-            lbFormula.Text = $"(x^{udPow.Value}{add}) % 1{new string('0', Convert.ToInt32(udDigits.Value))} <{udNumberSystem.Value}>";
+            lbFormula.Text = Manager.Current.GetFormula(
+                udNumberSystem.Value, udDigits.Value, udPow.Value, udAdd.Value);
         }
 
         void RefreshParameterPanel()
@@ -81,6 +88,8 @@ namespace Numbers
 
         void RequestCalculate()
         {
+            udCircle.Value = 0;
+
             _rubberRun = false;
             _hasEvent = true;
             _calculatingEvent = true;
@@ -239,11 +248,15 @@ namespace Numbers
             if (_isAnimationRunning)
             {
                 startStopButton.Text = "Stop";
+                startStopButton.BackColor = SystemColors.Highlight;
+                startStopButton.ForeColor = SystemColors.HighlightText;
                 Rubber();
             }
             else
             {
                 startStopButton.Text = "Start";
+                startStopButton.BackColor = SystemColors.Control;
+                startStopButton.ForeColor = SystemColors.ControlText;
                 _rubberRun = false;
             }
         }
@@ -285,7 +298,7 @@ namespace Numbers
 
         private void btInfo_Click(object sender, EventArgs e)
         {
-            InfoForm form = new InfoForm();
+            InfoForm form = new InfoForm(Manager.Current);
             form.ShowDialog();
             form.Dispose();
         }
