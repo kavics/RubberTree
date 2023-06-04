@@ -63,8 +63,9 @@ namespace Numbers
 
         void UpdateFormula()
         {
-            var add = udAdd.Value > 0 ? $" + {udAdd.Value}" : udAdd.Value < 0 ? $" - {-udAdd.Value}" : string.Empty;
-            lbFormula.Text = $"(x^{udPow.Value}{add}) % 1{new string('0', Convert.ToInt32(udDigits.Value))} <{udNumberSystem.Value}>";
+            var add = udAdd.Value > 0 ? $"+{udAdd.Value}" : udAdd.Value < 0 ? $"-{-udAdd.Value}" : string.Empty;
+            lbFormula.Text = $"<{udNumberSystem.Value}> (x^{udPow.Value}{add})" +
+                             $"%1{new string('0', Convert.ToInt32(udDigits.Value))}";
         }
 
         void RefreshParameterPanel()
