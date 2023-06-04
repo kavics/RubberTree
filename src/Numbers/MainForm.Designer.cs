@@ -366,6 +366,7 @@ namespace Numbers
             udAdd.BorderStyle = BorderStyle.FixedSingle;
             udAdd.Location = new Point(61, 112);
             udAdd.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
+            udAdd.Minimum = new decimal(new int[] { 1410065407, 2, 0, int.MinValue });
             udAdd.Name = "udAdd";
             udAdd.Size = new Size(48, 23);
             udAdd.TabIndex = 27;
@@ -492,7 +493,7 @@ namespace Numbers
             lbFormula.Name = "lbFormula";
             lbFormula.Size = new Size(171, 20);
             lbFormula.TabIndex = 14;
-            lbFormula.Text = "X^1 + 0";
+            lbFormula.Text = "<10> (X^1)%100";
             lbFormula.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btInfo
