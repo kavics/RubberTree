@@ -47,7 +47,7 @@
             ClientSize = new Size(448, 390);
             Controls.Add(textBox1);
             Name = "InfoForm";
-            Text = "InfoForm";
+            Text = "Saved trees information";
             Load += InfoForm_Load;
             ResumeLayout(false);
             PerformLayout();
