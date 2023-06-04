@@ -239,11 +239,15 @@ namespace Numbers
             if (_isAnimationRunning)
             {
                 startStopButton.Text = "Stop";
+                startStopButton.BackColor = SystemColors.Highlight;
+                startStopButton.ForeColor = SystemColors.HighlightText;
                 Rubber();
             }
             else
             {
                 startStopButton.Text = "Start";
+                startStopButton.BackColor = SystemColors.Control;
+                startStopButton.ForeColor = SystemColors.ControlText;
                 _rubberRun = false;
             }
         }
