@@ -32,6 +32,10 @@ namespace Numbers
             udCircle.Value = 0;
             udAdd.Value = 0;
             udPow.Value = 2;
+            lbRepulsionMax.Text = "0";
+            lbRubberMax.Text = "0";
+            lbForceMax.Text = "0";
+
             UpdateFormula();
             InitGraphics();
 
