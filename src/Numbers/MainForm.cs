@@ -88,6 +88,8 @@ namespace Numbers
 
         void RequestCalculate()
         {
+            udCircle.Value = 0;
+
             _rubberRun = false;
             _hasEvent = true;
             _calculatingEvent = true;
