@@ -66,9 +66,8 @@ namespace Numbers
 
         void UpdateFormula()
         {
-            var add = udAdd.Value > 0 ? $"+{udAdd.Value}" : udAdd.Value < 0 ? $"-{-udAdd.Value}" : string.Empty;
-            lbFormula.Text = $"<{udNumberSystem.Value}> (x^{udPow.Value}{add})" +
-                             $"%1{new string('0', Convert.ToInt32(udDigits.Value))}";
+            lbFormula.Text = Manager.Current.GetFormula(
+                udNumberSystem.Value, udDigits.Value, udPow.Value, udAdd.Value);
         }
 
         void RefreshParameterPanel()
@@ -293,7 +292,7 @@ namespace Numbers
 
         private void btInfo_Click(object sender, EventArgs e)
         {
-            InfoForm form = new InfoForm();
+            InfoForm form = new InfoForm(Manager.Current);
             form.ShowDialog();
             form.Dispose();
         }

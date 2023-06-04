@@ -195,5 +195,11 @@ namespace Numbers
             }
             xd.Save(_fileName);
         }
+
+        public string GetFormula(decimal numberSystem, decimal digits, decimal pow, decimal add)
+        {
+            var addition = add > 0 ? $"+{add}" : add < 0 ? $"-{-add}" : string.Empty;
+            return $"<{numberSystem}> (x^{pow}{addition})%1{new string('0', Convert.ToInt32(digits))}";
+        }
     }
 }
