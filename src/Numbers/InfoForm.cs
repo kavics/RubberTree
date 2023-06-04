@@ -12,9 +12,13 @@ namespace Numbers
 {
     public partial class InfoForm : Form
     {
-        public InfoForm()
+        private readonly Manager _manager;
+
+        public InfoForm(Manager manager)
         {
             InitializeComponent();
+
+            _manager = manager;
         }
 
         void Init()
@@ -26,11 +30,13 @@ namespace Numbers
             sb.Append("Digits").Append('\t');
             sb.Append("Pow").Append('\t');
             sb.Append("Add").Append('\t');
+            sb.Append("Formula");
             sb.Append("\r\n");
             sb.Append("======").Append('\t');
             sb.Append("======").Append('\t');
             sb.Append("======").Append('\t');
             sb.Append("======").Append('\t');
+            sb.Append("==============");
             sb.Append("\r\n");
             foreach (NumberTree tree in ntr)
             {
@@ -38,6 +44,7 @@ namespace Numbers
                 sb.Append(tree.Digits).Append('\t');
                 sb.Append(tree.Pow).Append('\t');
                 sb.Append(tree.Add).Append('\t');
+                sb.Append(_manager.GetFormula(tree.NumberSystem, tree.Digits, tree.Pow, tree.Add));
                 sb.Append("\r\n");
             }
             textBox1.Text = sb.ToString();
