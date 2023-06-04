@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 
 namespace Numbers
@@ -21,6 +22,8 @@ namespace Numbers
             Application.Idle += new EventHandler(Application_Idle);
             _hasEvent = true;
             _startingEvent = true;
+
+            Text = "Numbers V" + Assembly.GetExecutingAssembly().GetName().Version;
 
             udNumberSystem.Value = 10;
             udDigits.Value = 2;
