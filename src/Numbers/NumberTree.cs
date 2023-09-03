@@ -12,7 +12,7 @@ namespace Numbers
 
         bool _built;
         private NumberCollection _numberVector;
-        private NumberCollectionCollection _circles;
+        private List<NumberCollection> _circles;
         private int _digits;
         private int _numberSystem;
         private int _modulo;
@@ -30,10 +30,7 @@ namespace Numbers
 
         public int NumberSystem
         {
-            get
-            {
-                return _numberSystem;
-            }
+            get => _numberSystem;
             set
             {
                 _numberSystem = value;
@@ -43,10 +40,7 @@ namespace Numbers
 
         public int Digits
         {
-            get
-            {
-                return _digits;
-            }
+            get => _digits;
             set
             {
                 _digits = value;
@@ -56,10 +50,7 @@ namespace Numbers
 
         public int Add
         {
-            get
-            {
-                return _add;
-            }
+            get => _add;
             set
             {
                 _add = value;
@@ -69,10 +60,7 @@ namespace Numbers
 
         public int Pow
         {
-            get
-            {
-                return _pow;
-            }
+            get => _pow;
             set
             {
                 _pow = value;
@@ -81,29 +69,14 @@ namespace Numbers
         }
 
 
-        public NumberCollection Numbers
-        {
-            get
-            {
-                return _numberVector;
-            }
-        }
+        public NumberCollection Numbers => _numberVector;
 
-        public NumberCollectionCollection Circles
-        {
-            get
-            {
-                return _circles;
-            }
-        }
+        public List<NumberCollection> Circles => _circles;
 
 
         public double RepulsionPow
         {
-            get
-            {
-                return _repulsionPow;
-            }
+            get => _repulsionPow;
             set
             {
                 _repulsionPow = value;
@@ -113,10 +86,7 @@ namespace Numbers
 
         public double RepulsionMul
         {
-            get
-            {
-                return _repulsionMul;
-            }
+            get => _repulsionMul;
             set
             {
                 _repulsionMul = value;
@@ -126,10 +96,7 @@ namespace Numbers
 
         public double RubberPow
         {
-            get
-            {
-                return _rubberPow;
-            }
+            get => _rubberPow;
             set
             {
                 _rubberPow = value;
@@ -139,10 +106,7 @@ namespace Numbers
 
         public double RubberMul
         {
-            get
-            {
-                return _rubberMul;
-            }
+            get => _rubberMul;
             set
             {
                 _rubberMul = value;
@@ -151,29 +115,11 @@ namespace Numbers
         }
 
 
-        public double RepulsionMax
-        {
-            get
-            {
-                return _repulsionMax;
-            }
-        }
+        public double RepulsionMax => _repulsionMax;
 
-        public double RubberMax
-        {
-            get
-            {
-                return _rubberMax;
-            }
-        }
+        public double RubberMax => _rubberMax;
 
-        public double ForceMax
-        {
-            get
-            {
-                return _forceMax;
-            }
-        }
+        public double ForceMax => _forceMax;
 
 
         public NumberTree() : this(2, 1, 2, 0)
@@ -188,7 +134,7 @@ namespace Numbers
             _add = add;
 
             _numberVector = new NumberCollection();
-            _circles = new NumberCollectionCollection();
+            _circles = new List<NumberCollection>();
             _built = false;
 
             _repulsionPow = -2;
