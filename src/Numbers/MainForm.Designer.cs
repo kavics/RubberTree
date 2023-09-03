@@ -365,7 +365,8 @@ namespace Numbers
             // 
             udAdd.BorderStyle = BorderStyle.FixedSingle;
             udAdd.Location = new Point(61, 112);
-            udAdd.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
+            udAdd.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            udAdd.Minimum = new decimal(new int[] { 999, 0, 0, int.MinValue });
             udAdd.Name = "udAdd";
             udAdd.Size = new Size(48, 23);
             udAdd.TabIndex = 27;

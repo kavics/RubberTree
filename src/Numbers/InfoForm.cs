@@ -41,6 +41,9 @@ namespace Numbers
                 sb.Append("\r\n");
             }
             textBox1.Text = sb.ToString();
+            textBox1.SelectionStart = 0;
+            textBox1.SelectionLength = 0;
+            textBox1.ReadOnly = true;
         }
 
         private void InfoForm_Load(object sender, EventArgs e)
