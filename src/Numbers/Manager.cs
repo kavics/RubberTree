@@ -34,8 +34,8 @@ public class Manager
 
     public Size CurrentSpaceSize { get; set; }
 
-    NumberTreeCollection _forest;
-    public NumberTreeCollection Forest => _forest;
+    List<NumberTree> _forest;
+    public List<NumberTree> Forest => _forest;
 
 
     private void Initialize()
@@ -43,7 +43,7 @@ public class Manager
         Assembly a = Assembly.GetExecutingAssembly();
         string codeBase = a.CodeBase.Remove(0, 8).Replace("/", "\\");
         string appPath = Path.GetDirectoryName(codeBase);
-        _forest = new NumberTreeCollection();
+        _forest = new List<NumberTree>();
         _fileName = Path.ChangeExtension(codeBase, ".data.xml");
         Load();
         DefaultSpaceSize = new Size(600, 600);

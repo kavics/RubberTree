@@ -19,8 +19,8 @@ namespace Numbers
 
         void Init()
         {
-            StringBuilder sb = new StringBuilder();
-            NumberTreeCollection ntr = Manager.Current.Forest;
+            var sb = new StringBuilder();
+            var ntr = Manager.Current.Forest;
             ntr.Sort();
             sb.Append("Base").Append('\t');
             sb.Append("Digits").Append('\t');
@@ -32,7 +32,7 @@ namespace Numbers
             sb.Append("======").Append('\t');
             sb.Append("======").Append('\t');
             sb.Append("\r\n");
-            foreach (NumberTree tree in ntr)
+            foreach (var tree in ntr)
             {
                 sb.Append(tree.NumberSystem).Append('\t');
                 sb.Append(tree.Digits).Append('\t');
