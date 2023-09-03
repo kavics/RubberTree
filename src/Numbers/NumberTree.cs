@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing.Drawing2D;
 
 namespace Numbers
 {
@@ -11,9 +6,9 @@ namespace Numbers
     {
         const float FORCELIMIT = 10.0f;
 
-        Pen redpen = new Pen(Color.Red);
-        Pen bluepen = new Pen(Color.Blue);
-        Pen greenpen = new Pen(Color.Green);
+        //Pen redpen = new Pen(Color.Red);
+        //Pen bluepen = new Pen(Color.Blue);
+        //Pen greenpen = new Pen(Color.Green);
 
         bool _built;
         private NumberCollection _numberVector;

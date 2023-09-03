@@ -1,31 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Numbers;
 
-namespace Numbers
+public class NumberCircle : NumberCollection
 {
-    public class NumberCircle : NumberCollection
+    public Size SpaceSize { get; set; }
+
+
+    public NumberCircle(Size spaceSize)
     {
-        private Size _spaceSize;
-
-        public Size SpaceSize
-        {
-            get
-            {
-                return _spaceSize;
-            }
-            set
-            {
-                _spaceSize = value;
-            }
-        }
-
-
-        public NumberCircle(Size spaceSize)
-        {
-            _spaceSize = spaceSize;
-        }
+        SpaceSize = spaceSize;
     }
 }
